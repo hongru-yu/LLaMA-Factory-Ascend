@@ -1,0 +1,5 @@
+model_name_or_path: /home/ma-user/work/LLaMA-Factory/models/CodeQwen1.5-7B-Chat_lora_sft
+template: qwen
+infer_backend: vllm
+vllm_enforce_eager: true
+do_sample: false

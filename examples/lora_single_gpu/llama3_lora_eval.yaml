@@ -1,0 +1,20 @@
+### model
+model_name_or_path: qwen/CodeQwen1.5-7B-Chat
+cache_dir: /home/ma-user/work/models/
+adapter_name_or_path: saves/CodeQwen1.5-7B-Chat/lora/sft
+
+### method
+finetuning_type: lora
+
+### dataset
+task: mmlu
+split: test
+template: fewshot
+lang: zh
+n_shot: 5
+
+### output
+save_dir: saves/CodeQwen1.5-7B-Chat/lora/eval
+
+### eval
+batch_size: 4

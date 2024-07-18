@@ -1,0 +1,6 @@
+# model_name_or_path: LLM-Research/Meta-Llama-3-8B-Instruct
+# model_name_or_path: qwen/CodeQwen1.5-7B-Chat
+model_name_or_path: /home/ma-user/work/LLaMA-Factory/models/JITCodeYXY-7B-Chat_dpo_2
+template: qwen
+do_sample: false
+# cache_dir: /home/ma-user/work/models/

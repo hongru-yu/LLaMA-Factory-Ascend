@@ -1,0 +1,15 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /home/ma-user/work/models/qwen/CodeQwen1___5-7B-Chat
+# adapter_name_or_path: /home/ma-user/work/saves/CodeQwen1.5-7B-Chat/lora/sft
+adapter_name_or_path: /home/ma-user/work/saves/JITCodeYXW-7B-Chat/lora/sft
+template: qwen
+finetuning_type: lora
+
+### export
+# export_dir: /home/ma-user/work/models/JITCodeYXY-7B-Chat_lora_sft
+export_dir: /home/ma-user/work/models/JITCodeYXW-7B-Chat_lora_sft
+export_size: 2
+export_device: cpu
+export_legacy_format: false

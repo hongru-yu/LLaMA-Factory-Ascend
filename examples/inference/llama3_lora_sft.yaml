@@ -1,0 +1,9 @@
+# model_name_or_path: LLM-Research/Meta-Llama-3-8B-Instruct
+model_name_or_path: /home/ma-user/work/models/JITCodeYXY-7B-Chat_lora_sft
+# cache_dir: /home/ma-user/work/models/
+# adapter_name_or_path: saves/llama3-8b/lora/sft
+adapter_name_or_path: /home/ma-user/work/saves/JITCodeYXY-7B-Chat/dpo/round1
+# template: llama3
+template: qwen
+finetuning_type: lora
+do_sample: false

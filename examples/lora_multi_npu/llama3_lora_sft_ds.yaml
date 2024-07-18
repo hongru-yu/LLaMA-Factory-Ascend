@@ -1,0 +1,45 @@
+### model
+# model_name_or_path: LLM-Research/Meta-Llama-3-8B-Instruct
+model_name_or_path: /home/ma-user/work/models/qwen/CodeQwen1___5-7B-Chat
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: q_proj,v_proj
+
+### ddp
+ddp_timeout: 180000000
+deepspeed: examples/deepspeed/ds_z0_config.json
+
+### dataset 
+# dataset: identity,pkitool
+dataset: identity_yxw,problems
+template: qwen
+cutoff_len: 1024
+max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+# output_dir: /home/ma-user/work/saves/CodeQwen1.5-7B-Chat/lora/sft1
+output_dir: /home/ma-user/work/saves/JITCodeYXW-7B-Chat/lora/sft
+logging_steps: 10
+save_steps: 5000
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 2
+learning_rate: 0.000001
+num_train_epochs: 5.0
+lr_scheduler_type: cosine
+warmup_steps: 0.1
+fp16: true
+
+### eval
+val_size: 0.1
+per_device_eval_batch_size: 10
+evaluation_strategy: steps
+eval_steps: 1000

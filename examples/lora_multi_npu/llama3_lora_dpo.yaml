@@ -1,0 +1,43 @@
+### model
+model_name_or_path: /home/ma-user/work/models/JITCodeYXY-7B-Chat_lora_sft
+
+### method
+stage: dpo
+do_train: true
+finetuning_type: lora
+lora_target: q_proj,v_proj
+dpo_ftx: 1.0
+
+### ddp
+ddp_timeout: 180000000
+deepspeed: examples/deepspeed/ds_z0_config.json
+
+### dataset
+dataset: identity_dpo,pkitool_dpo
+template: qwen
+cutoff_len: 2048
+max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: /home/ma-user/work/saves/JITCodeYXY-7B-Chat/dpo/round1
+logging_steps: 10
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 2
+learning_rate: 0.00001
+num_train_epochs: 10.0
+lr_scheduler_type: cosine
+warmup_steps: 0.1
+fp16: true
+
+### eval
+val_size: 0.1
+per_device_eval_batch_size: 1
+evaluation_strategy: steps
+eval_steps: 100
